@@ -12,8 +12,11 @@ function [root] = get_velocity(a, lm, lt)
 beta = 0.1;
 
 % WRITE CODE HERE TO CALCULATE VELOCITY
+% function for root finding
+f = @(vm) a.*force_length_muscle(lm).*force_velocity_muscle(vm) + ...
+    force_length_parallel(lm) + beta.*vm - force_length_tendon(lt); 
 
-
+root = fzero(f, 0);
 end
 
 

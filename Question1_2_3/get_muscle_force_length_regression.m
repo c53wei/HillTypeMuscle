@@ -24,6 +24,6 @@ data(:,2) = normalize(data(:,2), 'range');
 
 % Regression with "fit" function with "gauss2" option as model type
 force_length_regression = fit(data(:, 1), data(:, 2), 'gauss2');
-plot(force_length_regression, data(:,1), data(:,2));
+% plot(force_length_regression, data(:,1), data(:,2));
 
 end

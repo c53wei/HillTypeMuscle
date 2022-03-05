@@ -13,7 +13,7 @@ force_velocity_regression = get_muscle_force_velocity_regression();
 %% Section 2: Question 1:
 clc
 plot_curves();
-
+saveas(gcf, "plot.png");
 %% Section 3: Question 2:
 clc
 
