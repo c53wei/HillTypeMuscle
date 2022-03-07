@@ -1,4 +1,3 @@
-
 function [normalize_PE_force] = force_length_parallel(lm)
 %%%% TAKS 1
 
