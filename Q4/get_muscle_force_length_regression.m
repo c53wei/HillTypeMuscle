@@ -175,8 +175,10 @@ data = [37.37463127	9.894736842;
         76.46017699	8.771929825];
 
 % Normalization
-data(:, 1) = normalize(data(:,1)) + 1;
-data(:,2) = normalize(data(:,2), 'range');
+[val, idx] = max(data(:,2));
+x_scale = data(idx,1);
+data(:,1) = data(:,1)/x_scale;
+data(:,2) = data(:,2)/val;
 
 % Regression with "fit" function with "gauss2" option as model type
 force_length_regression = fit(data(:, 1), data(:, 2), 'gauss2');
