@@ -16,8 +16,6 @@ function [force_length_regression] = get_muscle_force_length_regression()
 %     3) Return a Regression object that  uses Gaussian basis functions.
 
 % Define data points
-% data = readtable('wpd_datasets.csv', 'NumHeaderLines', 2);
-% data = data{:, [1 2]};
 
 data = [37.37463127	9.894736842;
         39.36578171	3.719298246;

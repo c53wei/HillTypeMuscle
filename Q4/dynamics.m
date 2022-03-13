@@ -22,7 +22,6 @@ tau_s = force_length_tendon(soleus.norm_tendon_length(soleus_length( ...
 tau_ta = force_length_tendon(tibialis.norm_tendon_length( ...
     tibialis_length(x(1)), x(4)))*tibialis_moment_arm*tibialis.f0M;
 
-
 x1_dot = x(2);
 x2_dot = (tau_s-tau_ta+gravity_moment(x(1)))/ankle_inertia;
 x3_dot = get_velocity(soleus_activation, x(3), ...
@@ -31,7 +30,5 @@ x4_dot = get_velocity(tibialis_activation, x(4), ...
     tibialis.norm_tendon_length(tibialis_length(x(1)), x(4)));
 
 x_dot = [x1_dot, x2_dot, x3_dot, x4_dot]';
-
-
 
 end

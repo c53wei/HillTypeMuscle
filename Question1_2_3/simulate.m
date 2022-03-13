@@ -12,7 +12,6 @@ L = resting_length_tendon + resting_length_muscle;
 
 %%% TASK 2
 
-% nested function
     function [output] = get_velocity_from_time(T, lm)
         lt = muscle.norm_tendon_length(L, lm);
         if T < 0.5
@@ -22,11 +21,8 @@ L = resting_length_tendon + resting_length_muscle;
         end
     end
 
-
-
 %%% TASK 3
 % the outputs of ode45 must be named "time" and "norm_lm"
-
 
 options = odeset('RelTol',RelTol,'AbsTol',AbsTol);
 [time,norm_lm] = ode45(@get_velocity_from_time, [0 T], 1, options);
