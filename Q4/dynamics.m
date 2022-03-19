@@ -17,10 +17,8 @@ tibialis_moment_arm = 0.03;
 
 %WRITE CODE HERE TO IMPLEMENT THE MODEL
 
-tau_s = force_length_tendon(soleus.norm_tendon_length(soleus_length( ...
-    x(1)), x(3)))*soleus_moment_arm*soleus.f0M;
-tau_ta = force_length_tendon(tibialis.norm_tendon_length( ...
-    tibialis_length(x(1)), x(4)))*tibialis_moment_arm*tibialis.f0M;
+tau_s = soleus_moment_arm*soleus.get_force(soleus_length(x(1)),x(3));
+tau_ta = tibialis_moment_arm*tibialis.get_force(tibialis_length(x(1)),x(4));
 
 x1_dot = x(2);
 x2_dot = (tau_s-tau_ta+gravity_moment(x(1)))/ankle_inertia;
